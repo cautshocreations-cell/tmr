@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "name": "codex-rp",
+  "builds": [
+    {
+      "src": "src/client/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/css/(.*)",
+      "dest": "/src/client/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/src/client/js/$1"
+    },
+    {
+      "src": "/images/(.*)",
+      "dest": "/src/client/images/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/client/index.html"
+    }
+  ]
+}

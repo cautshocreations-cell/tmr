@@ -1,0 +1,52 @@
+{
+  "name": "codex-rp-server",
+  "version": "1.0.0",
+  "description": "Serveur de règlements Codex RP pour OVH",
+  "main": "src/server/app.js",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "start": "node src/server/app.js",
+    "dev": "nodemon src/server/app.js",
+    "setup-db": "node scripts/setup-database.js",
+    "check-db": "node scripts/setup-database.js check",
+    "test": "echo \"Tests à implémenter\" && exit 0",
+    "deploy": "chmod +x deploy-ovh.sh && ./deploy-ovh.sh"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "express-rate-limit": "^6.10.0",
+    "multer": "^1.4.5",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "postgresql",
+    "regulations",
+    "rp",
+    "gaming"
+  ],
+  "author": "Codex RP Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/votre-compte/codex-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/votre-compte/codex-website/issues"
+  },
+  "homepage": "https://github.com/votre-compte/codex-website#readme"
+}

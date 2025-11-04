@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règlement - Serveur Codex RP</title>
+    <meta name="description" content="Découvrez les règlements officiels du serveur Codex RP - Votre expérience de jeu de rôle ultime">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="images/codex-logo-main.jpg">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="images/codex-logo-main.jpg" alt="Codex RP Logo" class="logo">
+                <h1>Règlement du Serveur Codex RP</h1>
+            </div>
+            <button id="admin-btn" class="admin-button">Interface Admin</button>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Interface de lecture du règlement -->
+        <section id="regulations-display" class="regulations-section">
+            <div id="regulation-list" class="regulation-list-container"></div>
+        </section>
+        
+        <!-- Interface d'administration (cachée par défaut) -->
+        <section id="admin-section" class="admin-section hidden">
+            <div class="admin-login">
+                <h2>Connexion Administrateur</h2>
+                <div class="login-form">
+                    <input type="text" id="username" placeholder="Nom d'utilisateur" required autocomplete="username">
+                    <input type="password" id="password" placeholder="Mot de passe" required autocomplete="current-password">
+                    <button id="login-btn">Se connecter</button>
+                    <button id="cancel-btn" class="cancel-btn">Annuler</button>
+                </div>
+                <div id="login-message" class="message"></div>
+            </div>
+            
+                        <!-- Interface admin (visible après connexion) -->
+            <div id="admin-interface" class="admin-interface hidden">
+                <div class="admin-header">
+                    <h2>Gestion des Règlements</h2>
+                    <button id="logout-btn" class="logout-btn">Déconnexion</button>
+                </div>
+                
+                <!-- Gestion des types de règlements -->
+                <div class="type-management-section">
+                    <button id="manage-types-btn" class="type-management-btn">Gérer les Types de Règlements</button>
+                    <div id="type-form" class="regulation-form hidden">
+                        <h3 id="type-form-title">Ajouter un nouveau type</h3>
+                        <form id="type-admin-form">
+                            <input type="text" id="type-name" placeholder="Nom du type (ex: Règles Générales)" required>
+                            <textarea id="type-description" placeholder="Description du type (optionnel)"></textarea>
+                            <div class="form-actions">
+                                <button type="submit" id="type-submit-btn">Ajouter le type</button>
+                                <button type="button" id="type-cancel-btn" class="cancel-btn hidden">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="admin-type-list" class="admin-regulation-list hidden"></div>
+                </div>
+                
+                <!-- Gestion des règlements -->
+                <div id="regulation-form" class="regulation-form"></div>
+                <div id="admin-regulation-list" class="admin-regulation-list"></div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="js/app.js"></script>
+    <script src="js/regulations.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
